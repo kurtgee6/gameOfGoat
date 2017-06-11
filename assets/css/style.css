@@ -1,0 +1,43 @@
+body {
+	background: url("../images/inside-background.jpg");
+}
+
+h1 {
+	color: SaddleBrown  ;
+	text-shadow: 1px 1px peru;
+	font-family: 'Fjalla One', sans-serif;
+	padding: 20px;
+	text-align: center;
+	font-size: 150px;
+}
+
+h2 {
+
+	background: url("../images/inside-background.jpg"); 
+	border: 1px solid LightSlateGrey  ;
+	color: SaddleBrown  ;
+	text-shadow: 1px 1px peru;
+	font-family: 'Fjalla One', sans-serif;
+	padding: 20px;
+	text-align: center;
+	font-size: 68px;
+	margin-right: 150px;
+	margin-left: 150px; 
+
+}
+
+#image {
+	width: 175px;
+	height: 175px;
+	border: 1px solid white;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background-color: white;
+}
+
+#image:hover {
+	background: url("../images/background.gif"); 
+	width: 150px;
+	height: 150px;
+	transition: 1s ease;
+}
