@@ -2,9 +2,6 @@
 
 $(document).ready(function() {
 
-var currentUserOffense;
-var currentUserdefense;
-var currentUserClutch;
 var hasFirstPlayerBeenSet = false;
 var hasSecondPlayerBeenSet = false;
 
@@ -38,18 +35,27 @@ var hasSecondPlayerBeenSet = false;
 
 	var Bryant = {
 	    name: "Kobe Bryant",
-	    offense:650,
+	    offense:670,
 	    defense:620,
 	    clutch:640,
 	    health: 100,
 	    pic: "assets/images/kobe-bryant.png"
 	}
 
+
+	function play(){
+       var audio = document.getElementById("audio");
+       audio.play();
+                 }
+
+
 ////////////////////////////////////////////////////////////////////////
-/////////GET IMAGE SOURCE TO DISPLAY TO DIFFERENT CLASS ////////////////
+/////////GETS IMAGE SOURCE TO DISPLAY TO DIFFERENT CLASS ///////////////
 ////////////////////////////////////////////////////////////////////////
 
 		$(".image").on("click", function(event) {
+
+			play();
 
 		   if ($('#appendToImage2').contents().length !== 0) {
 		   	return true;
@@ -61,6 +67,8 @@ var hasSecondPlayerBeenSet = false;
 	       		 $(this).detach().appendTo("#appendToImage1");
 
 	       		 $(".header").text("Select your Opponent");
+
+	       		 	play();
 
 	    			checkPlayer(url);
 	       		 	
@@ -74,30 +82,9 @@ var hasSecondPlayerBeenSet = false;
 
 		});
 
-
-		$("button").click(function (event) {
-			
-			var className = $(event.target).attr("class").split(" ")[2];
-
-			var currentUserOffense;
-			var currentUserdefense;
-			var currentUserClutch;
-
-			if (className === "offense-1") {
-
-					if (Jordan.offense > Bryant.offense) {
-						console.log("hello");
-					}
-
-			} else if (className === "defense-1") {
-
-			}	else if (className === "clutch-1") {
-
-			}
-
-		});
-
-
+////////////////////////////////////////////////////////////////////////
+/////////CHECKS PLAYER IMAGES AND DISPLAYS CORRECT STATS ////////////////
+////////////////////////////////////////////////////////////////////////
 
 		function checkPlayer(url) {
 			var name;
@@ -146,11 +133,38 @@ var hasSecondPlayerBeenSet = false;
 				setSecondPlayer();
 			}
 
+			var activeOpponent1 = {
+				playeName: "player",
+				playerOffense: 0,
+				playerDefense: 0,
+				playerClutch: 0,
+				playerHealth: 0
+			}
+
+			var activeOpponent2 = {
+				playerName: "player",
+				playerOffense: 0,
+				playerDefense: 0,
+				playerClutch: 0,
+				playerHealth: 0
+			}
+
 			function setFirstPlayer() {
+
 		       	$(".offense").text( name + " Offense: " + offense);
+		       	activeOpponent1. = playerOffense;
 	       		$(".defense").text( name + " Defense: " + defense);
+	       		activeOpponent1.defense = playerDefense;
 	       		$(".clutch").text( name + " Clutch: " + clutch);
+	       		activeOpponent1.clutch = playerClutch;
 	       		$(".health1").text( name + " Health: " + health);
+	       		activeOpponent1.health = playerHealth
+	       		activeOpponent1.name = playerName;
+
+
+	       		console.log("set first player is" + activeOpponent1.name);
+
+
 			}
 
 			function setSecondPlayer() {
@@ -161,6 +175,29 @@ var hasSecondPlayerBeenSet = false;
 			}
 
 		}
+
+//////////////////////////////////////////////////////////////////////////////
+////CHECKS IMAGE CLICKED THEN BUTTON ATTACKS ACCORDING TO PLAYER STATS ///////
+//////////////////////////////////////////////////////////////////////////////
+
+
+		// $("button").click(function (event) {
+			
+		// 	var className = $(event.target).attr("class").split(" ")[2];
+
+		// 	if (className === "offense-1") {
+
+		// 			if (jordan.) {
+		// 				console.log("hello");
+		// 			}
+
+
+		// 	}
+
+		// });
+
+
+
 });
 
 
