@@ -8,15 +8,17 @@
     					<!-- Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     					<!-- Image inside the title tag-->
-    <link rel="icon" type="image/png" href="assets/images/Goat.png" />
+    <link rel="icon" type="image/png" href="assets/images/goat.png" />
     				<!-- 	Source Font -->
     <link class="image-title" href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+				    	<!-- JQuery source -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
 <body>
 	
-	<div class="container">
+<div class="container">
 	
 		<div class="first-row">
 			<div class="col-lg-12">
@@ -26,23 +28,70 @@
 
 		<div class="second-row">
 			<div class="col-lg-12">
-				<h2>Select Your Baller
-				<br>
+				<h2><div class="header">Select Your Baller</div>
 					<div class="image-container">
-					  <img id="image" src="assets/images/kevin-durant.png">
-					  <img id="image" src="assets/images/kobe-bryant.png">
-					  <img id="image" src="assets/images/lebron-james.png">
-					  <img id="image" src="assets/images/michael-jordan.png">
+					  <img class="image" src="assets/images/kevin-durant.png">
+					  <img class="image" src="assets/images/kobe-bryant.png">
+					  <img class="image" src="assets/images/lebron-james.png">
+					  <img class="image" src="assets/images/michael-jordan.png">
 					</div>
 				</h2>
 			</div>
 		</div>
-
-
+	<div class="third-row">
+		<div class="col-lg-12">
+			<h2><div class="ball">BALL OUT!</div>
+				<div id="appendToImage1"></div>
+				<div id="appendToImage2"></div>
+				<button class="btn btn-primary offense-1" type="submit">OFFENSE</button>
+				<button class="btn btn-primary defense-1" type="submit">DEFENSE</button>
+				<button class="btn btn-primary clutch-1" type="submit">CLUTCH TIME</button>
+			<br>
+			</h2>
+		</div>
 	</div>
 
+	<div class="fourth-row">
+		<div class="col-lg-4">
+			<div class="stat1">
+				<p class="stat offense">Your Player's Stats:
+					
+				</p>
+				<p class="stat defense">
+					
+				</p>
+				<p class="stat clutch">
+					
+				</p>
+				<br>
+				<p class="stat offense1">Your Opponent's Stats:
+					
+				</p>
+				<p class="stat defense1">
+					
+				</p>
+				<p class="stat clutch1">
+					
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="fifth-row">
+		<div class="col-lg-4">
+			<div class="stat2">
+				<p class="energy health1">
+					
+				</p>
+				<p class="energy health2">
+					
+				</p>
+			</div>
+		</div>
+	</div>
 
-    <!-- Javascript source-->
+</div>
+
+    				<!-- Javascript source-->
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
