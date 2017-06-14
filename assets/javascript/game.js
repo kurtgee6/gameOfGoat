@@ -90,6 +90,7 @@ $(document).ready(function () {
         var defense;
         var clutch;
         var health;
+
         var activeOpponent1 = {
             playerName: "player",
             playerOffense: 0,
@@ -110,7 +111,7 @@ $(document).ready(function () {
             activeOpponent1.playerOffense = offense;
             activeOpponent1.playerDefense = defense;
             activeOpponent1.playerClutch = clutch;
-            activeOpponent1.playerHealth = health
+            activeOpponent1.playerHealth = health;
             activeOpponent1.playerName = name;
             $(".health1").text(name + " Health: " + health);
             $(".clutch").text(name + " Clutch: " + clutch);
@@ -128,13 +129,13 @@ $(document).ready(function () {
             activeOpponent2.playerOffense = offense;
             activeOpponent2.playerDefense = defense;
             activeOpponent2.playerClutch = clutch;
-            activeOpponent2.playerHealth = health
+            activeOpponent2.playerHealth = health;
             activeOpponent2.playerName = name;
-            console.log("second player is: " + activeOpponent2.playerName);
-            $(".offense1").text(name + " Offense: " + offense);
+            $(".health2").text(name + " Health: " + health);
             $(".defense1").text(name + " Defense: " + defense);
             $(".clutch1").text(name + " Clutch: " + clutch);
-            $(".health2").text(name + " Health: " + health);
+            $(".offense1").text(name + " Offense: " + offense);
+            console.log("second player is: " + activeOpponent2.playerName);
             console.log("stats for " + activeOpponent2.playerName + ": ");
             console.log("Offense: " + activeOpponent2.playerOffense);
             console.log("Defense: " + activeOpponent2.playerDefense);
@@ -182,45 +183,59 @@ $(document).ready(function () {
             setSecondPlayer();
         }
 
-        var activeOpponent1 = {
-            playeName: "player",
-            playerOffense: 0,
-            playerDefense: 0,
-            playerClutch: 0,
-            playerHealth: 0
-        }
-
-        var activeOpponent2 = {
-            playerName: "player",
-            playerOffense: 0,
-            playerDefense: 0,
-            playerClutch: 0,
-            playerHealth: 0
-        }
+        //////////////////////////////////////////////////////////////////////////////
+        ////CHECKS IMAGE CLICKED THEN BUTTON ATTACKS ACCORDING TO PLAYER STATS ///////
+        //////////////////////////////////////////////////////////////////////////////
 
 
+        ////did not finish these last three functions////
+
+        $("button").click(function (event) {
+
+            var className = $(event.target).attr("class").split(" ")[2];
+
+            if (className === "offense-1") {
+
+                if ((activeOpponent1.playerOffense > activeOpponent2.playerOffense)) {
+
+                    var newHealth = activeOpponent1.playerHealth--;
+
+                    $(".health2").text(name + " Health: " + newHealth);
+
+                }
+
+            }
+
+            if (className === "defense-1") {
+
+                if ((activeOpponent1.playerOffense > activeOpponent2.playerOffense)) {
+
+                    var newHealth = activeOpponent1.playerHealth--;
+
+                    $(".health1").text(name + " Health: " + newHealth);
+
+                }
+
+            }
+
+
+            if (className === "clutch-1") {
+
+                if ((activeOpponent1.playerOffense > activeOpponent2.playerOffense)) {
+
+                    var newHealth = activeOpponent1.playerHealth--;
+
+                    $(".health2").text(name + " Health: " + newHealth);
+
+                }
+
+            }
+
+
+
+        });
 
     }
-
-    //////////////////////////////////////////////////////////////////////////////
-    ////CHECKS IMAGE CLICKED THEN BUTTON ATTACKS ACCORDING TO PLAYER STATS ///////
-    //////////////////////////////////////////////////////////////////////////////
-
-
-    // $("button").click(function (event) {
-
-    // 	var className = $(event.target).attr("class").split(" ")[2];
-
-    // 	if (className === "offense-1") {
-
-    // 			if (jordan.) {
-    // 				console.log("hello");
-    // 			}
-
-
-    // 	}
-
-    // });
 
 
 
