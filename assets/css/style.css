@@ -1,113 +1,110 @@
 body {
-  background: url("../images/inside-background.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 1200px;
+    background: url("../images/inside-background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
 }
 
 h1 {
-	color: SaddleBrown  ;
-	text-shadow: 1px 1px peru;
-	font-family: 'Fjalla One', sans-serif;
-	padding: 20px;
-	text-align: center;
-	font-size: 140px;
+    color: SaddleBrown;
+    text-shadow: 1px 1px peru;
+    font-family: 'Fjalla One', sans-serif;
+    padding: 20px;
+    text-align: center;
+    font-size: 140px;
 }
 
-h2 {
-
-	background: url("../images/inside-background.jpg"); 
-	border: 1px solid LightSlateGrey ;
-	color: SaddleBrown  ;
-	text-shadow: 1px 1px peru;
-	font-family: 'Fjalla One', sans-serif;
-	padding: 20px;
-	text-align: center;
-	font-size: 68px;
-	margin-right: 150px;
-	margin-left: 150px; 
-
+p {
+    color: white;
+    font-family: 'Fjalla One', sans-serif;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
 }
 
-
-
-#appendToImage1, #appendToImage2 {
-	background-color: white;
+.intro-container {
     border: 1px solid white;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+}
+
+#welcome {
+    text-align: center;
+    margin: 0px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+#startButton {
+    outline: none;
+    border-radius: 20px;
+    background-color: saddlebrown;
+    color: white;
+    font-family: 'Fjalla One', sans-serif;
+    padding: 20px;
+    margin: 45px;
     width: 200px;
-    margin-bottom: 20px;
-    height: 200px;
-    margin-top: 10px;
-    margin-left: 290px;
+    font-size: 20px;
+}
+
+#startButton:hover {
+    border-radius: 20px;
+    background-color: #c1916f;
+    color: black;
+}
+
+.image-container {
+    text-align: center;
 }
 
 .image {
-	width: 175px;
-	height: 175px;
-	border: 1px solid white;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	background-color: white;
+    width: 175px;
+    height: 175px;
+    border: 1px solid white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    margin: 10px;
 }
 
-.image:hover  {
-	background: url("../images/background.gif"); 
-	width: 150px;
-	height: 150px;
-	transition: 1s ease;
-	opacity: 2;
-	content: attr(data-text);
+.image:hover {
+    background: url("../images/background.gif");
+    width: 150px;
+    height: 150px;
+    transition: 1s ease;
+    content: attr(data-text);
 }
 
-.ball {
-	font-size: 110px;
+#charContainer {
+    text-align: center;
+    height: 280px;
+    width: auto;
+    margin: 30px;
+    margin-bottom: 0;
 }
 
-.btn-primary {
-    margin-left: 30px;
-    color: #fff;
-    background-color: SaddleBrown;
+#firstChar {
+    border: 1px solid white;
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin-left: 230px;
 }
 
-.btn {
-	padding: 20px;
+#secondChar {
+    border: 1px solid white;
+    height: 250px;
+    width: 250px;
+    float: right;
+    margin-right: 230px;
 }
 
-
-.stat1 {
-	border: 2px solid LightSlateGrey ;
-	width: 450px;
-	margin-bottom: 20px;
-	position: relative;
-	left: 150px;
-	height: 300px;
-	padding: 30px;
-	text-align: center;
+h2 {
+    color: SaddleBrown;
+    text-shadow: 1px 1px peru;
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+    font-size: 110px;
 }
-
-
-.stat2 {
-	border: 2px solid LightSlateGrey ;
-	width: 350px;
-	margin-bottom: 20px;
-	position: relative;
-	left: 230px;
-	height: 200px;
-	padding: 60px;
-}
-
-.stat {
-	color: white;
-	font-size: 18px;
-	text-shadow: 1px 1px peru;
-}
-
-.energy {
-	color: white;
-	font-size: 18px;
-	text-shadow: 1px 1px peru;
-}
-
-

@@ -2,101 +2,57 @@
 <html>
 
 <head>
-    	<title>Game Of Goats</title>
-    					<!-- Bootstrap CSS -->
+    <title>Game Of Goats</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    					<!-- Custom CSS-->
+    <!-- Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    					<!-- Image inside the title tag-->
+    <!-- Image inside the title tag-->
     <link rel="icon" type="image/png" href="assets/images/goat.png" />
-    				<!-- 	Source Font -->
+    <!-- 	Source Font -->
     <link class="image-title" href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-				    	<!-- JQuery source -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-					<!--Audio for game onload -->
-<!--	<audio id="myVideo" autoplay="assets/audio/music.mp3" src="assets/audio/music.mp3" loop="assets/audio/music.mp3"></audio>-->
-					<!-- Click audio for game -->
-	<audio id="audio" src="assets/audio/click.mp3" ></audio>
+    <!-- JQuery source -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--Audio for game onload -->
+    <!--	<audio id="myVideo" autoplay="assets/audio/music.mp3" src="assets/audio/music.mp3" loop="assets/audio/music.mp3"></audio>-->
+    <!-- Click audio for game -->
+    <audio id="audio" src="assets/audio/click.mp3"></audio>
 
 </head>
 
 <body>
-	
-<div class="container">
-	
-		<div class="first-row">
-			<div class="col-lg-12">
-				<h1>GAME OF GOATS</h1>
-			</div>
-		</div>
 
-		<div class="second-row">
-			<div class="col-lg-12">
-				<h2><div class="header">Select Your Baller</div>
-					<div class="image-container">
-					  <img class="image" src="assets/images/kevin-durant.png">
-					  <img class="image" src="assets/images/kobe-bryant.png">
-					  <img class="image" src="assets/images/lebron-james.png">
-					  <img class="image" src="assets/images/michael-jordan.png">
-					</div>
-				</h2>
-			</div>
-		</div>
-	<div class="third-row">
-		<div class="col-lg-12">
-			<h2><div class="ball">BALL OUT!</div>
-				<div id="appendToImage1"></div>
-				<div id="appendToImage2"></div>
-				<button class="btn btn-primary offense-1" type="submit">OFFENSE</button>
-				<button class="btn btn-primary defense-1" type="submit">DEFENSE</button>
-				<button class="btn btn-primary clutch-1" type="submit">CLUTCH TIME</button>
-			<br>
-			</h2>
-		</div>
-	</div>
+    <div class="container">
 
-	<div class="fourth-row">
-		<div class="col-lg-4">
-			<div class="stat1">
-				<p class="stat offense">
-					
-				</p>
-				<p class="stat defense">
-					
-				</p>
-				<p class="stat clutch">
-					
-				</p>
-				<br>
-				<p class="stat offense1">
-					
-				</p>
-				<p class="stat defense1">
-					
-				</p>
-				<p class="stat clutch1">
-					
-				</p>
-			</div>
-		</div>
-	</div>
-	<div class="fifth-row">
-		<div class="col-lg-4">
-			<div class="stat2">
-				<p class="energy health1">
-					
-				</p>
-				<p class="energy health2">
-					
-				</p>
-			</div>
-		</div>
-	</div>
+        <!--Start Game // Introduction-->
 
-</div>
+        <div class="first-row">
+            <div class="col-lg-12">
+                <div class="intro-container">
+                    <h1>GAME OF GOATS</h1>
+                    <p>1) Pick one of your favorite ballers</p>
+                    <p>2) Battle against another baller</p>
 
-    				<!-- Javascript source-->
+                    <div class="wrapper">
+                        <button id="startButton">
+                            START GAME
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- character page shows up when start button is clicked-->
+                <div id="characterPage"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Javascript source-->
     <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+
 
 </body>
 

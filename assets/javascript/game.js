@@ -1,8 +1,11 @@
+var kevImage;
+var lebImage;
+var kobImage;
+var micImage;
+
 $(document).ready(function () {
 
-    var hasFirstPlayerBeenSet = false;
-    var hasSecondPlayerBeenSet = false;
-
+    //objects of characters
     var Jordan = {
         name: "Michael Jordan",
         offense: 700,
@@ -14,22 +17,21 @@ $(document).ready(function () {
 
     var James = {
         name: "Lebron James",
-        offense: 650,
+        offense: 660,
         defense: 620,
-        clutch: 610,
+        clutch: 630,
         health: 100,
         pic: "assets/images/lebron-james.png"
     }
 
     var Durant = {
-        name: "Kevin Durant",
+        name: "Kevin of Durant",
         offense: 630,
         defense: 600,
         clutch: 630,
         health: 100,
         pic: "assets/images/kevin-durant.png"
     }
-
 
     var Bryant = {
         name: "Kobe Bryant",
@@ -40,202 +42,133 @@ $(document).ready(function () {
         pic: "assets/images/kobe-bryant.png"
     }
 
+    //onclick function for start button
+    $("#startButton").on("click", function (event) {
 
-    function play() {
-        var audio = document.getElementById("audio");
-        audio.play();
-    }
+        //removing elements once user clicks start
+        $(this).closest(".intro-container").remove();
 
+        //image sources
+        kevImage = 'src=assets/images/kevin-durant.png';
+        lebImage = 'src=assets/images/kobe-bryant.png';
+        kobImage = 'src=assets/images/lebron-james.png';
+        micImage = 'src=assets/images/michael-jordan.png';
 
-    ////////////////////////////////////////////////////////////////////////
-    /////////GETS IMAGE SOURCE TO DISPLAY TO DIFFERENT CLASS ///////////////
-    ////////////////////////////////////////////////////////////////////////
+        //calling back the user baller choice
+        chooseBallerTemplate();
 
-    $(".image").on("click", function (event) {
-
-        play();
-
-        if ($('#appendToImage2').contents().length !== 0) {
-            return true;
-        }
-        var url = $(event.target).attr('src');
-
-        if ($('#appendToImage1').contents().length === 0) {
-
-            $(this).detach().appendTo("#appendToImage1");
-
-            $(".header").text("Select your Opponent");
-
-            play();
-
-            checkPlayer(url);
-
-        } else {
-
-            $(this).detach().appendTo("#appendToImage2");
-
-            checkPlayer(url);
-
-        }
+        //choosing a character function
+        choose();
 
     });
 
-    ////////////////////////////////////////////////////////////////////////
-    /////////CHECKS PLAYER IMAGES AND DISPLAYS CORRECT STATS ////////////////
-    ////////////////////////////////////////////////////////////////////////
+    //check if <div id=firstChar> is empty
+    function check() {
 
-    function checkPlayer(url) {
-        var name;
-        var offense;
-        var defense;
-        var clutch;
-        var health;
+        if ($('#secondChar').html() == '') {
 
-        var activeOpponent1 = {
-            playerName: "player",
-            playerOffense: 0,
-            playerDefense: 0,
-            playerClutch: 0,
-            playerHealth: 0
-        }
-        var activeOpponent2 = {
-            playerName: "player",
-            playerOffense: 0,
-            playerDefense: 0,
-            playerClutch: 0,
-            playerHealth: 0
-        }
+            $(this).detach().appendTo("#secondChar");
 
-        var setFirstPlayer = function () {
-            console.log(activeOpponent1);
-            activeOpponent1.playerOffense = offense;
-            activeOpponent1.playerDefense = defense;
-            activeOpponent1.playerClutch = clutch;
-            activeOpponent1.playerHealth = health;
-            activeOpponent1.playerName = name;
-            $(".health1").text(name + " Health: " + health);
-            $(".clutch").text(name + " Clutch: " + clutch);
-            $(".defense").text(name + " Defense: " + defense);
-            $(".offense").text(name + " Offense: " + offense);
-            console.log("first player is: " + activeOpponent1.playerName);
-            console.log("stats for " + activeOpponent1.playerName + ": ");
-            console.log("Offense: " + activeOpponent1.playerOffense);
-            console.log("Defense: " + activeOpponent1.playerDefense);
-            console.log("Clutch: " + activeOpponent1.playerClutch);
-            console.log("Health: " + activeOpponent1.playerHealth);
-        }
-        var setSecondPlayer = function () {
-            console.log(activeOpponent1);
-            activeOpponent2.playerOffense = offense;
-            activeOpponent2.playerDefense = defense;
-            activeOpponent2.playerClutch = clutch;
-            activeOpponent2.playerHealth = health;
-            activeOpponent2.playerName = name;
-            $(".health2").text(name + " Health: " + health);
-            $(".defense1").text(name + " Defense: " + defense);
-            $(".clutch1").text(name + " Clutch: " + clutch);
-            $(".offense1").text(name + " Offense: " + offense);
-            console.log("second player is: " + activeOpponent2.playerName);
-            console.log("stats for " + activeOpponent2.playerName + ": ");
-            console.log("Offense: " + activeOpponent2.playerOffense);
-            console.log("Defense: " + activeOpponent2.playerDefense);
-            console.log("Clutch: " + activeOpponent2.playerClutch);
-            console.log("Health: " + activeOpponent2.playerHealth);
-        }
-
-        if (url === Jordan.pic) {
-
-            name = "Michael Jordan";
-            offense = Jordan.offense;
-            defense = Jordan.defense;
-            clutch = Jordan.clutch;
-            health = Jordan.health;
-
-        } else if (url === Bryant.pic) {
-
-            name = "Kobe Bryant";
-            offense = Bryant.offense;
-            defense = Bryant.defense;
-            clutch = Bryant.clutch;
-            health = Jordan.health;
-
-        } else if (url === Durant.pic) {
-
-            name = "Kevin Durant";
-            offense = Durant.offense;
-            defense = Durant.defense;
-            clutch = Durant.clutch;
-            health = Jordan.health;
-
-        } else if (url === James.pic) {
-
-            name = "Lebron James";
-            offense = James.offense;
-            defense = James.defense;
-            clutch = James.clutch;
-            health = Jordan.health;
-        }
-
-        if (hasFirstPlayerBeenSet === false) {
-            setFirstPlayer();
-            hasFirstPlayerBeenSet = true;
         } else {
-            setSecondPlayer();
+            console.log("what?");
         }
 
-        //////////////////////////////////////////////////////////////////////////////
-        ////CHECKS IMAGE CLICKED THEN BUTTON ATTACKS ACCORDING TO PLAYER STATS ///////
-        //////////////////////////////////////////////////////////////////////////////
+        return;
+    }
+
+    //choosing a character
+    function choose() {
+
+        $(".image").on("click", function (event) {
+
+            var currentImage = $(this).attr('src');
+
+            if (currentImage === Durant.pic) {
+
+                //removes current divs
+                $(this).closest(".intro-container").remove();
+
+                //creates new div template
+                chooseOpponentTemplate();
+
+                //detach image clicked on and appends to new div
+                $(this).detach().appendTo("#firstChar");
+
+                check();
+
+            } else if (currentImage === Bryant.pic) {
+
+                //removes current divs
+                $(this).closest(".intro-container").remove();
+
+                //creates new div template
+                chooseOpponentTemplate();
+
+                //detach image clicked on and appends to new div
+                $(this).detach().appendTo("#firstChar");
 
 
-        ////did not finish these last three functions////
 
-        $("button").click(function (event) {
+            } else if (currentImage === James.pic) {
 
-            var className = $(event.target).attr("class").split(" ")[2];
+                //removes current divs
+                $(this).closest(".intro-container").remove();
 
-            if (className === "offense-1") {
+                //creates new div template
+                chooseOpponentTemplate();
 
-                if ((activeOpponent1.playerOffense > activeOpponent2.playerOffense)) {
+                //detach image clicked on and appends to new div
+                $(this).detach().appendTo("#firstChar");
 
-                    var newHealth = activeOpponent1.playerHealth--;
 
-                    $(".health2").text(name + " Health: " + newHealth);
+            } else if (currentImage === Jordan.pic) {
 
-                }
+                //removes current divs
+                $(this).closest(".intro-container").remove();
+
+                //creates new div template
+                chooseOpponentTemplate();
+
+                //detach image clicked on and appends to new div
+                $(this).detach().appendTo("#firstChar");
 
             }
-
-            if (className === "defense-1") {
-
-                if ((activeOpponent1.playerOffense > activeOpponent2.playerOffense)) {
-
-                    var newHealth = activeOpponent1.playerHealth--;
-
-                    $(".health1").text(name + " Health: " + newHealth);
-
-                }
-
-            }
-
-
-            if (className === "clutch-1") {
-
-                if ((activeOpponent1.playerOffense > activeOpponent2.playerOffense)) {
-
-                    var newHealth = activeOpponent1.playerHealth--;
-
-                    $(".health2").text(name + " Health: " + newHealth);
-
-                }
-
-            }
-
 
 
         });
 
+        return;
+
+    };
+
+    //called after user hits start button
+    function chooseBallerTemplate() {
+
+        $("#characterPage").append("<div class= intro-container>" +
+            "<h2> CHOOSE YOUR BALLER" + "</h2>" +
+            "<div class=image-container>" +
+            "<img class = image " + kevImage + ">" + "<img class = image " + lebImage + ">" +
+            "<img class = image " + kobImage + ">" + "<img class = image " + micImage + ">" +
+            "</div>" +
+            "</div>");
+
+        return;
     }
+
+    //gets called after first player is chosen
+    function chooseOpponentTemplate() {
+        $("#characterPage").append("<div class= intro-container>" +
+            "<h2> CHOOSE YOUR OPPONENT" + "</h2>" +
+            "<div class=image-container>" +
+            "<img class = image " + kevImage + ">" + "<img class = image " + lebImage + ">" +
+            "<img class = image " + kobImage + ">" + "<img class = image " + micImage + ">" +
+            "</div>" + "<div id=charContainer>" + "<div id=firstChar>" + "</div>" + "<div id=secondChar>" +
+            "</div>" + "</div>");
+
+
+        return;
+    }
+
 
 
 
