@@ -62,18 +62,20 @@ $(document).ready(function () {
 
     });
 
+
     //check if <div id=firstChar> is empty
     function check() {
 
-        if ($('#secondChar').html() == '') {
+        if ($('#secondChar').contents().length === 0) {
 
-            $(this).detach().appendTo("#secondChar");
+            console.log("works");
 
+            $(".image").on("click", function (event) {
+                $(this).detach().appendTo("#secondChar");
+            })
         } else {
-            console.log("what?");
+            console.log("not working");
         }
-
-        return;
     }
 
     //choosing a character
@@ -93,6 +95,7 @@ $(document).ready(function () {
 
                 //detach image clicked on and appends to new div
                 $(this).detach().appendTo("#firstChar");
+
 
                 check();
 
