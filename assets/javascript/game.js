@@ -80,15 +80,50 @@ $(document).ready(function () {
                 $("h2").remove();
 
 
-            })
+                var currentImage = $(this).attr('src');
+
+                if (currentImage === Durant.pic) {
+
+                    $("#name2").text(Durant.name);
+                    $("#offense2").text(Durant.offense);
+                    $("#defense2").text(Durant.defense);
+                    $("#clutch2").text(Durant.clutch);
+                    $("#health2").text(Durant.health);
 
 
-        } else {
+                } else if (currentImage === Bryant.pic) {
 
-            //check to see if it isn't working
-            console.log("not working");
-        }
-    }
+                    $("#name2").text(Bryant.name);
+                    $("#offense2").text(Bryant.offense);
+                    $("#defense2").text(Bryant.defense);
+                    $("#clutch2").text(Bryant.clutch);
+                    $("#health2").text(Bryant.health);
+
+
+                } else if (currentImage === James.pic) {
+
+                    $("#name2").text(James.name);
+                    $("#offense2").text(James.offense);
+                    $("#defense2").text(James.defense);
+                    $("#clutch2").text(James.clutch);
+                    $("#health2").text(James.health);
+
+
+                } else if (currentImage === Jordan.pic) {
+
+                    $("#name2").text(Jordan.name);
+                    $("#offense2").text(Jordan.offense);
+                    $("#defense2").text(Jordan.defense);
+                    $("#clutch2").text(Jordan.clutch);
+                    $("#health2").text(Jordan.health);
+
+                }
+
+            });
+
+
+        };
+    };
 
 
 
@@ -101,11 +136,19 @@ $(document).ready(function () {
 
             if (currentImage === Durant.pic) {
 
+                console.log(typeof (Durant.offense));
+
                 //removes current divs
                 $(this).closest(".intro-container").remove();
 
                 //creates new div template
                 chooseOpponentTemplate();
+
+                $("#name1").text(Durant.name);
+                $("#offense1").text(Durant.offense);
+                $("#defense1").text(Durant.defense);
+                $("#clutch1").text(Durant.clutch);
+                $("#health1").text(Durant.health);
 
                 //detach image clicked on and appends to firstChar div
                 $(this).detach().appendTo("#firstChar");
@@ -121,8 +164,17 @@ $(document).ready(function () {
                 //creates new div template
                 chooseOpponentTemplate();
 
+                $("#name1").text(Bryant.name);
+                $("#offense1").text(Bryant.offense);
+                $("#defense1").text(Bryant.defense);
+                $("#clutch1").text(Bryant.clutch);
+                $("#health1").text(Bryant.health);
+
+
                 //detach image clicked on and appends to firstChar div
                 $(this).detach().appendTo("#firstChar");
+
+                check();
 
 
 
@@ -134,8 +186,17 @@ $(document).ready(function () {
                 //creates new div template
                 chooseOpponentTemplate();
 
+                $("#name1").text(James.name);
+                $("#offense1").text(James.offense);
+                $("#defense1").text(James.defense);
+                $("#clutch1").text(James.clutch);
+                $("#health1").text(James.health);
+
+
                 //detach image clicked on and appends to firstChar div
                 $(this).detach().appendTo("#firstChar");
+
+                check();
 
 
             } else if (currentImage === Jordan.pic) {
@@ -146,8 +207,16 @@ $(document).ready(function () {
                 //creates new div template
                 chooseOpponentTemplate();
 
+                $("#name1").text(Jordan.name);
+                $("#offense1").text(Jordan.offense);
+                $("#defense1").text(Jordan.defense);
+                $("#clutch1").text(Jordan.clutch);
+                $("#health1").text(Jordan.health);
+
                 //detach image clicked on and appends to firstChar div
                 $(this).detach().appendTo("#firstChar");
+
+                check();
 
             }
 
