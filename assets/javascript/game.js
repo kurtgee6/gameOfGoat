@@ -66,17 +66,31 @@ $(document).ready(function () {
     //check if <div id=firstChar> is empty
     function check() {
 
-        if ($('#secondChar').contents().length === 0) {
+        //if it is empty
+        if ($('#firstChar').contents().length !== 0) {
 
+            //makes sure that it's working
             console.log("works");
 
+            //on click image that detaches and appends to secondChar div
             $(".image").on("click", function (event) {
                 $(this).detach().appendTo("#secondChar");
+
+                $(".image-container").remove();
+                $("h2").remove();
+
+
             })
+
+
         } else {
+
+            //check to see if it isn't working
             console.log("not working");
         }
     }
+
+
 
     //choosing a character
     function choose() {
@@ -93,11 +107,11 @@ $(document).ready(function () {
                 //creates new div template
                 chooseOpponentTemplate();
 
-                //detach image clicked on and appends to new div
+                //detach image clicked on and appends to firstChar div
                 $(this).detach().appendTo("#firstChar");
 
-
                 check();
+
 
             } else if (currentImage === Bryant.pic) {
 
@@ -107,7 +121,7 @@ $(document).ready(function () {
                 //creates new div template
                 chooseOpponentTemplate();
 
-                //detach image clicked on and appends to new div
+                //detach image clicked on and appends to firstChar div
                 $(this).detach().appendTo("#firstChar");
 
 
@@ -120,7 +134,7 @@ $(document).ready(function () {
                 //creates new div template
                 chooseOpponentTemplate();
 
-                //detach image clicked on and appends to new div
+                //detach image clicked on and appends to firstChar div
                 $(this).detach().appendTo("#firstChar");
 
 
@@ -132,7 +146,7 @@ $(document).ready(function () {
                 //creates new div template
                 chooseOpponentTemplate();
 
-                //detach image clicked on and appends to new div
+                //detach image clicked on and appends to firstChar div
                 $(this).detach().appendTo("#firstChar");
 
             }
@@ -166,13 +180,13 @@ $(document).ready(function () {
             "<img class = image " + kevImage + ">" + "<img class = image " + lebImage + ">" +
             "<img class = image " + kobImage + ">" + "<img class = image " + micImage + ">" +
             "</div>" + "<div id=charContainer>" + "<div id=firstChar>" + "</div>" + "<div id=secondChar>" +
-            "</div>" + "</div>");
-
+            "</div>" + "<h1>VS. " + " </h1>" + "</div>" + "<div id=statsContainer>" + "<div id=stats1>" +
+            "<div id=name1>" + "</div>" + "<div id=health1>" + "</div>" + "<div id=clutch1>" + "</div>" +
+            "<div id=defense1>" + "</div>" + "<div id=offense1>" + "</div>" + "</div>" + "<div id=stats2>" +
+            "<div id=name2>" + "</div>" + "<div id=health2>" + "</div>" + "<div id=clutch2>" + "</div>" +
+            "<div id=defense2>" + "</div>" + "<div id=offense2>" + "</div>" + "</div>" + "</div>");
 
         return;
     }
-
-
-
 
 });

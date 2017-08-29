@@ -26,6 +26,7 @@ p {
     margin-bottom: 60px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 20px;
+    text-align: center;
 }
 
 #welcome {
@@ -78,8 +79,7 @@ p {
 }
 
 #charContainer {
-    text-align: center;
-    height: 280px;
+    height: 240px;
     width: auto;
     margin: 30px;
     margin-bottom: 0;
@@ -87,16 +87,16 @@ p {
 
 #firstChar {
     border: 1px solid white;
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     float: left;
     margin-left: 230px;
 }
 
 #secondChar {
     border: 1px solid white;
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     float: right;
     margin-right: 230px;
 }
@@ -107,4 +107,25 @@ h2 {
     font-family: 'Fjalla One', sans-serif;
     text-align: center;
     font-size: 110px;
+}
+
+#statsContainer {
+    text-align: center;
+    height: 200px;
+    border: 1px solid white;
+    margin: 30px;
+}
+
+#stats1 {
+    border: 1px solid white;
+    margin: 30px;
+    width: 300px;
+    float: left;
+}
+
+#stats2 {
+    border: 1px solid white;
+    margin: 30px;
+    width: 300px;
+    float: right;
 }
