@@ -63,70 +63,6 @@ $(document).ready(function () {
     });
 
 
-    //check if <div id=firstChar> is empty
-    function check() {
-
-        //if it is empty
-        if ($('#firstChar').contents().length !== 0) {
-
-            //makes sure that it's working
-            console.log("works");
-
-            //on click image that detaches and appends to secondChar div
-            $(".image").on("click", function (event) {
-                $(this).detach().appendTo("#secondChar");
-
-                $(".image-container").remove();
-                $("h2").remove();
-
-
-                var currentImage = $(this).attr('src');
-
-                if (currentImage === Durant.pic) {
-
-                    $("#name2").text(Durant.name);
-                    $("#offense2").text(Durant.offense);
-                    $("#defense2").text(Durant.defense);
-                    $("#clutch2").text(Durant.clutch);
-                    $("#health2").text(Durant.health);
-
-
-                } else if (currentImage === Bryant.pic) {
-
-                    $("#name2").text(Bryant.name);
-                    $("#offense2").text(Bryant.offense);
-                    $("#defense2").text(Bryant.defense);
-                    $("#clutch2").text(Bryant.clutch);
-                    $("#health2").text(Bryant.health);
-
-
-                } else if (currentImage === James.pic) {
-
-                    $("#name2").text(James.name);
-                    $("#offense2").text(James.offense);
-                    $("#defense2").text(James.defense);
-                    $("#clutch2").text(James.clutch);
-                    $("#health2").text(James.health);
-
-
-                } else if (currentImage === Jordan.pic) {
-
-                    $("#name2").text(Jordan.name);
-                    $("#offense2").text(Jordan.offense);
-                    $("#defense2").text(Jordan.defense);
-                    $("#clutch2").text(Jordan.clutch);
-                    $("#health2").text(Jordan.health);
-
-                }
-
-            });
-
-
-        };
-    };
-
-
-
     //choosing a character
     function choose() {
 
@@ -136,19 +72,17 @@ $(document).ready(function () {
 
             if (currentImage === Durant.pic) {
 
-                console.log(typeof (Durant.offense));
-
                 //removes current divs
                 $(this).closest(".intro-container").remove();
 
                 //creates new div template
                 chooseOpponentTemplate();
 
-                $("#name1").text(Durant.name);
-                $("#offense1").text(Durant.offense);
-                $("#defense1").text(Durant.defense);
-                $("#clutch1").text(Durant.clutch);
-                $("#health1").text(Durant.health);
+                $("#name1").text("NAME: " + Durant.name);
+                $("#offense1").text("OFFENSE: " + Durant.offense);
+                $("#defense1").text("DEFENSE: " + Durant.defense);
+                $("#clutch1").text("CLUTCH: " + Durant.clutch);
+                $("#health1").text("HEALTH: " + Durant.health);
 
                 //detach image clicked on and appends to firstChar div
                 $(this).detach().appendTo("#firstChar");
@@ -164,11 +98,11 @@ $(document).ready(function () {
                 //creates new div template
                 chooseOpponentTemplate();
 
-                $("#name1").text(Bryant.name);
-                $("#offense1").text(Bryant.offense);
-                $("#defense1").text(Bryant.defense);
-                $("#clutch1").text(Bryant.clutch);
-                $("#health1").text(Bryant.health);
+                $("#name1").text("NAME: " + Bryant.name);
+                $("#offense1").text("OFFENSE: " + Bryant.offense);
+                $("#defense1").text("DEFENSE: " + Bryant.defense);
+                $("#clutch1").text("CLUTCH: " + Bryant.clutch);
+                $("#health1").text("HEALTH: " + Bryant.health);
 
 
                 //detach image clicked on and appends to firstChar div
@@ -186,11 +120,11 @@ $(document).ready(function () {
                 //creates new div template
                 chooseOpponentTemplate();
 
-                $("#name1").text(James.name);
-                $("#offense1").text(James.offense);
-                $("#defense1").text(James.defense);
-                $("#clutch1").text(James.clutch);
-                $("#health1").text(James.health);
+                $("#name1").text("NAME: " + James.name);
+                $("#offense1").text("OFFENSE: " + James.offense);
+                $("#defense1").text("DEFENSE: " + James.defense);
+                $("#clutch1").text("CLUTCH: " + James.clutch);
+                $("#health1").text("HEALTH: " + James.health);
 
 
                 //detach image clicked on and appends to firstChar div
@@ -207,11 +141,11 @@ $(document).ready(function () {
                 //creates new div template
                 chooseOpponentTemplate();
 
-                $("#name1").text(Jordan.name);
-                $("#offense1").text(Jordan.offense);
-                $("#defense1").text(Jordan.defense);
-                $("#clutch1").text(Jordan.clutch);
-                $("#health1").text(Jordan.health);
+                $("#name1").text("NAME: " + Jordan.name);
+                $("#offense1").text("OFFENSE: " + Jordan.offense);
+                $("#defense1").text("DEFENSE: " + Jordan.defense);
+                $("#clutch1").text("CLUTCH: " + Jordan.clutch);
+                $("#health1").text("HEALTH: " + Jordan.health);
 
                 //detach image clicked on and appends to firstChar div
                 $(this).detach().appendTo("#firstChar");
@@ -226,6 +160,71 @@ $(document).ready(function () {
         return;
 
     };
+
+
+
+    //check if <div id=firstChar> is empty
+    function check() {
+
+        //if it is empty
+        if ($('#firstChar').contents().length !== 0) {
+
+            //on click image that detaches and appends to secondChar div
+            $(".image").on("click", function (event) {
+                $(this).detach().appendTo("#secondChar");
+
+                $(".image-container").remove();
+                $("h2").remove();
+
+                $("#charContainer").append("<div id=buttonContainer>" + "<button id=offense>OFFENSE" +
+                    "</button>" + "<button id=defense>DEFENSE" + "</button>" +
+                    "<button id=clutch>CLUTCH" + "</button>" + "</div>");
+
+
+                var currentImage = $(this).attr('src');
+
+                if (currentImage === Durant.pic) {
+
+                    $("#name2").text("NAME: " + Durant.name);
+                    $("#offense2").text("OFFENSE: " + Durant.offense);
+                    $("#defense2").text("DEFENSE: " + Durant.defense);
+                    $("#clutch2").text("CLUTCH: " + Durant.clutch);
+                    $("#health2").text("HEALTH: " + Durant.health);
+
+                } else if (currentImage === Bryant.pic) {
+
+                    $("#name2").text("NAME: " + Bryant.name);
+                    $("#offense2").text("OFFENSE: " + Bryant.offense);
+                    $("#defense2").text("DEFENSE: " + Bryant.defense);
+                    $("#clutch2").text("CLUTCH: " + Bryant.clutch);
+                    $("#health2").text("HEALTH: " + Bryant.health);
+
+
+                } else if (currentImage === James.pic) {
+
+                    $("#name2").text("NAME: " + James.name);
+                    $("#offense2").text("OFFENSE: " + James.offense);
+                    $("#defense2").text("DEFENSE: " + James.defense);
+                    $("#clutch2").text("CLUTCH: " + James.clutch);
+                    $("#health2").text("HEALTH: " + James.health);
+
+
+                } else if (currentImage === Jordan.pic) {
+
+                    $("#name2").text("NAME: " + Jordan.name);
+                    $("#offense2").text("OFFENSE: " + Jordan.offense);
+                    $("#defense2").text("DEFENSE: " + Jordan.defense);
+                    $("#clutch2").text("CLUTCH: " + Jordan.clutch);
+                    $("#health2").text("HEALTH: " + Jordan.health);
+
+                }
+
+                fight();
+
+            });
+        };
+    };
+
 
     //called after user hits start button
     function chooseBallerTemplate() {
@@ -256,6 +255,32 @@ $(document).ready(function () {
             "<div id=defense2>" + "</div>" + "<div id=offense2>" + "</div>" + "</div>" + "</div>");
 
         return;
+    }
+
+
+    function fight() {
+        $("#offense").on("click", function (event) {
+            console.log("offense");
+
+            var url = $(event.target).attr('src');
+
+            if (url === Durant.pic) {
+                console.log($(this).attr('src'));
+            } else {
+                console.log("wrong");
+            }
+        });
+
+        $("#defense").on("click", function (event) {
+            console.log("defense");
+        });
+
+        $("#clutch").on("click", function (event) {
+            console.log("clutch");
+        });
+
+        return;
+
     }
 
 });
